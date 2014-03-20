@@ -64,12 +64,13 @@ Here is a very simplistic example, where we define multiple routes
 
   var r = new Router();
 
-  r.add("/user");
+  //We'll attach some arbitrary data to this route
+  r.add("/user", { call: "User.create" });
   r.add("/account");
   r.add("/mailbox");
   r.add("/user/:id");
 
-  r.resolve("/user"); // returns { route:"/user", params:{}});
+  r.resolve("/user"); // returns { route:"/user", params:{}, data: { call: "User.create"}});
   r.resolve("/user/55"); // returns { route:"/user/:id", params:{id:"55"}});
 
   //Later we could decide to remove a route:

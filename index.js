@@ -203,10 +203,14 @@ Router.prototype.resolve=function(path){
       for(var i in vals){
         params[node.vars[i]]=vals[i]; 
       }
-      if(node.onMatch){
+      if(typeof node.onMatch=="function"){
         node.onMatch(node.route,params);
       } 
-      return { route: node.route, params: params };
+      var res={ route: node.route, params: params };
+      if(["array","number","string","object"].indexOf(typeof node.onMatch)!=-1){
+        res.data=node.onMatch; 
+      }
+      return res;
     }
   }
 }
@@ -300,10 +304,10 @@ if(typeof assert!="undefined"){
 
   assert.equal(r.toString(),"");
 
-  r.add("/foo/:param/bar");
+  r.add("/foo/:param/bar", { a: 1 });
   r.add("/foo/:param/baz");
 
-  assert.deepEqual(r.resolve("/foo/1/bar"),{"route":"/foo/:param/bar","params":{"param":"1"}});
+  assert.deepEqual(r.resolve("/foo/1/bar"),{"route":"/foo/:param/bar","params":{"param":"1"}, data:{a:1}});
   assert.deepEqual(r.resolve("/foo/1/baz"),{"route":"/foo/:param/baz","params":{"param":"1"}});
 
 
