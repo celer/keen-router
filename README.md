@@ -1,5 +1,12 @@
 # Keen Router
 
+## Code Coverage
+
+* Statements   : 95.03% ( 153/161 )
+* Branches     : 84.85% ( 56/66 )
+* Functions    : 100% ( 9/9 )
+* Lines        : 95% ( 152/160 )
+
 ## Introduction
 
 This is a path router for use with your favorite web framework. 
