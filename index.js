@@ -16,6 +16,25 @@ var Router=function(tokenizer){
   this.routes=0;
 }
 
+Router.prototype.list=function(){
+  var routes = [];
+
+  var search=function(node){
+    if(node.route){
+      routes.push(node.route);
+    }
+    for(var i in node.children){
+      search(node.children[i]);
+    }
+  }
+   
+
+  search(this.root);
+
+  return routes;
+
+}
+
 Router.prototype.add=function(path,onMatch){
   var pathParts = this.tokenizer(path);
   var node = this.root;
@@ -198,6 +217,8 @@ if(typeof assert!="undefined"){
 
   r.add("/1/2/3/4"); 
   
+  assert.equal(r.toString(),"\n\t1\n\t\t2\n\t\t\t3\n\t\t\t\t4\n");
+  
   try { 
     r.add("/1/2/3/4"); 
   } catch(e){
@@ -205,6 +226,9 @@ if(typeof assert!="undefined"){
   }
   
   r.add("1/2/3/4");
+
+  assert.deepEqual(r.list(),["1/2/3/4","/1/2/3/4"]);
+
 
   assert.deepEqual(r.resolve("1/2/3/4"),{"route":"1/2/3/4","params":{}});
   assert.deepEqual(r.resolve("/1/2/3/4"),{"route":"/1/2/3/4","params":{}});

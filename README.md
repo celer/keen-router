@@ -74,6 +74,8 @@ Here is a very simplistic example, where we define multiple routes
 
   //Later we could decide to remove a route:
   r.remove("/user");
+
+  r.list(); //returns ["/account","/mailbox","/user/:id"]
   
 ```
 
