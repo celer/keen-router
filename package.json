@@ -1,0 +1,11 @@
+{
+  "name": "keen-router",
+  "version": "0.1.0",
+  "description": "A tree based, disambiguating path router (for HTTP)",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "author": "celer",
+  "license": "MIT"
+}
