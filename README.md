@@ -1,11 +1,5 @@
 # Keen Router
 
-## Code Coverage
-
-* Statements   : 95.03% ( 153/161 )
-* Branches     : 84.85% ( 56/66 )
-* Functions    : 100% ( 9/9 )
-* Lines        : 95% ( 152/160 )
 
 ## Introduction
 
@@ -16,7 +10,13 @@ It is a bit special because:
   * It uses a tree based structure to store routes, it doesn't use a list like most popular routers
     * It will use as few comparisons as possible to determine if a path is matched
   * It can disambiguate between multiple conflicting routes, and will choose the best one
-    * 
+
+#### Code Coverage
+
+* Statements   : 95.03% ( 153/161 )
+* Branches     : 84.85% ( 56/66 )
+* Functions    : 100% ( 9/9 )
+* Lines        : 95% ( 152/160 )
 
 ## Routing logic
 
