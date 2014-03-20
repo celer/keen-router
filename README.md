@@ -63,7 +63,7 @@ was added first.
 
 Here is a very simplistic example, where we define multiple routes
 
-``javascript
+```javascript
   var Router = require('keen-router');
 
   var r = new Router();
@@ -79,11 +79,11 @@ Here is a very simplistic example, where we define multiple routes
   //Later we could decide to remove a route:
   r.remove("/user");
   
-``
+```
 
 Here is an example which uses call backs:
 
-``javascript
+```javascript
   var Router = require('keen-router');
 
   var r = new Router();
@@ -95,11 +95,11 @@ Here is an example which uses call backs:
   });
 
   r.resolve("/foo/bar");
-``  
+```  
 
 You can also specify your own tokenizer for routes:
 
-``javascript
+```javascript
   
   var Router = require('keen-router');
 
@@ -107,7 +107,7 @@ You can also specify your own tokenizer for routes:
     return path.split("|");
   });
 
-``
+```
 
 This means that you can support routes in various formats such as:
 
