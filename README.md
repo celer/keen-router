@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/celer/keen-router.png)](https://travis-ci.org/celer/keen-router)
 [![Depdendency Status](https://david-dm.org/celer/keen-router.png)](https://david-dm.org/celer/keen-router)
+[![Code Coverage](https://coveralls.io/repos/celer/keen-router/badge.png?branch=master)](https://coveralls.io/r/celer/keen-router)
 
 ## Introduction
 

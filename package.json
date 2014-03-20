@@ -2,11 +2,15 @@
   "name": "keen-router",
   "version": "0.1.0",
   "description": "A tree based, disambiguating path router (for HTTP)",
-  "repository":"https://github.com/celer/keen-router.git",
+  "repository": "https://github.com/celer/keen-router.git",
   "main": "index.js",
   "scripts": {
-    "test": "node index.js"
+    "test": "./node_modules/.bin/istanbul cover index.js && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
   },
   "author": "celer",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "coveralls": "^2.10.0",
+    "istanbul": "^0.2.6"
+  }
 }
