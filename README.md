@@ -3,7 +3,6 @@
 [![Build Status](https://travis-ci.org/celer/keen-router.png)](https://travis-ci.org/celer/keen-router)
 [![Depdendency Status](https://david-dm.org/celer/keen-router.png)](https://david-dm.org/celer/keen-router)
 
-
 ## Introduction
 
 This is a path router for use with your favorite web framework. 
